@@ -1,0 +1,16 @@
+<!-- multisearch setup -->
+<% results.each do |result| %>
+  <% if result.searchable_type == "Movie" %>
+    <% movie = result.searchable %>
+    <div class="movie-result">
+      <%= movie.title %>
+      <%= movie.director.first_name %>
+    </div>
+  <% else %>
+    <% show = result.searchable %>
+    <div class="show-result">
+      <%= show.title %>
+    </div>
+  <% end %>
+<% end %>
+
